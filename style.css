@@ -1,0 +1,17 @@
+/* #resume-form{
+    display:none;
+} */
+
+
+.resume-template{
+    display:none;
+} 
+
+img{
+    border-radius:50%;
+    width:200px;
+}
+
+.background{
+    background-color: #2D9596;
+}

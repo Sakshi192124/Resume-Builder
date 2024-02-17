@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+  
+    <!-- Resume Generator Form -->
+    <div class="container" id="resume-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <form>
+            <div>
+                <h3>Personal Information</h3>
+                <div class="row">
+                    <!-- Personal Information -->
+                    <div class="col-md-6 mb-3">
+                        <label for="name"  class="form-label">Name</label>
+                        <input type="text" placeholder="Full Name" id="name" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email"  class="form-label">Email</label>
+                        <input type="text" placeholder="Email" id="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="num" class="form-label">Contact number</label>
+                        <input type="text" id="num" class="form-control" placeholder="Mobile Number">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea id="address" placeholder="Enter here.." class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3> Professional Information</h3>
+            
+                <div class="row">
+                    <div class="col" id="education">
+                        <label for="edu" class="form-label">Education</label>
+                        <textarea type="text" id="edu" class="form-control edufield" placeholder="Enter here.."></textarea>
+                        <div class="mt-2" id="btne">
+                            <button type="button" class="btn btn-dark" onclick="Addedutextarea()">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+        
+                <!-- Work Experience -->
+                <div class="row">
+                    <div class="col" id="exp">
+                        <label for="experience"  class="form-label">Experience</label>
+                        <textarea type="text" id="experience" class="form-control efield" placeholder="Enter here.."></textarea>
+                        <div class="mt-2" id="btn">
+                            <button type="button" class="btn btn-dark" onclick="Addexptextarea()">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            
+                <!-- Skill -->
+                <div class="row">
+                    <div class="col" id="skills">
+                        <label for="skill"  class="form-label">Skill</label>
+                        <textarea type="text" id="skill" class="form-control sfield"  placeholder="Enter here.."></textarea>
+                        <div class="mt-2 " id="btns">
+                            <button type="button" class="btn btn-dark" onclick="Addskilltextarea()">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>   
+           
+            <div>
+                <button type="button"  class="btn btn-dark mb-5" onclick="generateResume()">Generate Resume</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <!-- Resume Template -->
+    <div class="container resume-template" >
+        <div class="row" id="resume-template">
+            <div class="col-md-4 text-center background">
+                <img src="img.png" class="mt-4">
+                <div class="container mt-4" >
+                    <p id="nameT1">Full Name</p>
+                    <hr>
+                    <p id="numberT">+91 1234567982 , +91 3528899468</p>
+                    <p id="addressT">Sector-51, Carolbagh, NewDelhi</p>
+                    <hr>
+                    <p id="emailT">abc@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-md-8 mt-2">
+                <h2 class="text-center mb-4" id="nameT2">Full Name</h2>
+
+                <div class="card mb-3" >
+                    <div class="card-header background">
+                        <h4>Education</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul id="educationT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="card mb-3">
+                    <div class="card-header background">
+                       <h4>Experience</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul id="experienceT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, dignissimos.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-header background">
+                        <h4>Skill</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skillT">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                </div>     
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="button"  class="btn btn-dark downloadbtn" >Download</button>
+        </div>
+    </div>
+
+    <!-- Html2 cdn library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- bootstrap cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
